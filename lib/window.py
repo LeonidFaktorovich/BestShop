@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton
-
+import yaml
 
 class ShopWindow(QMainWindow):
     def __init__(self):
