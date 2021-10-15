@@ -1,8 +1,13 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow
-from lib.window import ShopWindow
+from PyQt5.QtWidgets import QApplication
 
-if __name__ == '__main__':
-    app = QApplication([])
-    window = ShopWindow()
+from lib.window import Login
+import sys
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = Login()
     window.show()
-    app.exec()
+    sys.exit(app.exec_())
+
+
