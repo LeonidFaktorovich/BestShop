@@ -75,7 +75,7 @@ class ShopWindow(QMainWindow):
         if self.data['houses'][1] == 0:
             self.button_house_1.hide()
             self.new_label_house_1 = QLabel('Дома первого уровня нет в наличии', self)
-            self.new_label_house_1.setGeometry(275, 270, 250, 80)
+            self.new_label_house_1.setGeometry(285, 270, 250, 80)
             self.new_label_house_1.show()
         self.data['users'][self.username][1] += 1
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:
@@ -87,7 +87,7 @@ class ShopWindow(QMainWindow):
         if self.data['houses'][2] == 0:
             self.button_house_2.hide()
             self.new_label_house_2 = QLabel('Дома второго уровня нет в наличии', self)
-            self.new_label_house_2.setGeometry(650, 270, 250, 80)
+            self.new_label_house_2.setGeometry(660, 270, 250, 80)
             self.new_label_house_2.show()
         self.data['users'][self.username][2] += 1
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:
@@ -99,7 +99,7 @@ class ShopWindow(QMainWindow):
         if self.data['houses'][3] == 0:
             self.button_house_3.hide()
             self.new_label_house_3 = QLabel('Дома третьего уровня нет в наличии', self)
-            self.new_label_house_3.setGeometry(1025, 270, 250, 80)
+            self.new_label_house_3.setGeometry(1035, 270, 250, 80)
             self.new_label_house_3.show()
         self.data['users'][self.username][3] += 1
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:
@@ -123,7 +123,7 @@ class ShopWindow(QMainWindow):
         if self.data['houses'][5] == 0:
             self.button_house_5.hide()
             self.new_label_house_5 = QLabel('Дома пятого уровня нет в наличии', self)
-            self.new_label_house_5.setGeometry(650, 620, 250, 80)
+            self.new_label_house_5.setGeometry(665, 620, 250, 80)
             self.new_label_house_5.show()
         self.data['users'][self.username][5] += 1
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:

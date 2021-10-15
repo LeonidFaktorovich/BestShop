@@ -1,9 +1,9 @@
 houses:
-  1: 10
-  2: 3
-  3: 7
-  4: 4
-  5: 4
+  1: 0
+  2: 0
+  3: 0
+  4: 0
+  5: 0
 location_of_buttons:
   button_house_1: (275, 270, 250, 80)
   button_house_2: (650, 270, 250, 80)
@@ -24,11 +24,11 @@ location_of_labels:
   label_password_log: (160, 145, 81, 31)
   label_user: (160, 95, 81, 31)
   label_user_log: (160, 95, 81, 31)
-  new_label_house_1: (275, 270, 250, 80)
-  new_label_house_2: (650, 270, 250, 80)
-  new_label_house_3: (1025, 270, 250, 80)
+  new_label_house_1: (285, 270, 250, 80)
+  new_label_house_2: (660, 270, 250, 80)
+  new_label_house_3: (1035, 270, 250, 80)
   new_label_house_4: (275, 620, 250, 80)
-  new_label_house_5: (650, 620, 250, 80)
+  new_label_house_5: (665, 620, 250, 80)
 names_of_buttons:
 - button_house_1
 - button_house_2
@@ -55,9 +55,16 @@ names_of_labels:
 - label_user_log
 - label_password_log
 users:
+  Leonid:
+    password: '123123'
+    1: 12
+    2: 6
+    3: 10
+    4: 6
+    5: 6
   admin:
     password: leonid
-    1: 0
+    1: 1
     2: 0
     3: 0
     4: 0
