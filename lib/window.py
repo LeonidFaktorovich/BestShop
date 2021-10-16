@@ -72,7 +72,37 @@ class ShopWindow(QMainWindow):
         self.button_of_stat.setGeometry(50, 125, 170, 50)
         self.button_of_stat.clicked.connect(self.on_click_stat)
         self.buttons.append(self.button_of_stat)
-        # это тоже константа
+
+        if self.data['houses'][1] == 0:
+            self.button_house_1.hide()
+            self.new_label_house_1 = QLabel('Дома первого уровня нет в наличии', self)
+            self.new_label_house_1.setGeometry(285, 270, 250, 80)
+            self.new_label_house_1.show()
+
+        if self.data['houses'][2] == 0:
+            self.button_house_2.hide()
+            self.new_label_house_2 = QLabel('Дома второго уровня нет в наличии', self)
+            self.new_label_house_2.setGeometry(660, 270, 250, 80)
+            self.new_label_house_2.show()
+
+        if self.data['houses'][3] == 0:
+            self.button_house_3.hide()
+            self.new_label_house_3 = QLabel('Дома третьего уровня нет в наличии', self)
+            self.new_label_house_3.setGeometry(1035, 270, 250, 80)
+            self.new_label_house_3.show()
+
+        if self.data['houses'][4] == 0:
+            self.button_house_4.hide()
+            self.new_label_house_4 = QLabel('Дома четвертого уровня нет в наличии', self)
+            self.new_label_house_4.setGeometry(275, 620, 250, 80)
+            self.new_label_house_4.show()
+
+        if self.data['houses'][5] == 0:
+            self.button_house_5.hide()
+            self.new_label_house_5 = QLabel('Дома пятого уровня нет в наличии', self)
+            self.new_label_house_5.setGeometry(665, 620, 250, 80)
+            self.new_label_house_5.show()
+
         self.resize(1300, 800)
         self.show()
 
@@ -189,6 +219,12 @@ class No_username(QMessageBox):
         self.msg = QMessageBox.information(self, '', 'Такого логина нет в системе')
 
 
+class Yes_username(QMessageBox):
+    def __init__(self):
+        super().__init__()
+        self.msg = QMessageBox.information(self, '', 'Такой логин есть в системе')
+
+
 class Wrong_password(QMessageBox):
     def __init__(self):
         super().__init__()
@@ -225,17 +261,25 @@ class Sign_up(QDialog):
         self.signup_button.clicked.connect(self.registration)
         self.show()
 
+    def yes_username(self):
+        self.y_username = Yes_username()
+
     def registration(self):
         self.username_reg = self.user_line.text()
         self.password_reg = self.password_line.text()
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'r') as file:
             self.data = yaml.safe_load(file)
+        if self.username_reg not in self.data['users']:
             self.data['users'][self.username_reg] = {'password': self.password_reg, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
-        with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:
-            yaml.dump(self.data, file, default_flow_style=False)
-        self.mainwindow = ShopWindow(self.username_reg, self.password_reg)
-        self.close()
-        self.mainwindow.show()
+            with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'w') as file:
+                yaml.dump(self.data, file, default_flow_style=False)
+            self.mainwindow = ShopWindow(self.username_reg, self.password_reg)
+            self.close()
+            self.mainwindow.show()
+        else:
+            self.yes_username()
+            self.user_line.clear()
+            self.password_line.clear()
 
 
 class Login(QDialog):
