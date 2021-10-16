@@ -12,6 +12,8 @@ class ShopWindow(QMainWindow):
 
         with open('/Users/apple/PycharmProjects/BestShop/data/data.yml', 'r') as file:
             self.data = yaml.safe_load(file)
+
+        self.buttons = []
         # дом 1
         self.pixmap_1 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
         self.label_house_1 = QLabel(self)
@@ -21,6 +23,7 @@ class ShopWindow(QMainWindow):
                                           .format(self.data['houses'][1]), self)
         self.button_house_1.setGeometry(275, 270, 250, 80)
         self.button_house_1.clicked.connect(self.on_click)
+        self.buttons.append(self.button_house_1)
         # дом 2
         self.pixmap_2 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
         self.label_house_2 = QLabel(self)
@@ -31,6 +34,7 @@ class ShopWindow(QMainWindow):
                                           .format(self.data['houses'][2]), self)
         self.button_house_2.setGeometry(650, 270, 250, 80)
         self.button_house_2.clicked.connect(self.on_click_2)
+        self.buttons.append(self.button_house_2)
         # дом 3
         self.pixmap_3 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
         self.label_house_3 = QLabel(self)
@@ -41,30 +45,33 @@ class ShopWindow(QMainWindow):
                                           .format(self.data['houses'][3]), self)
         self.button_house_3.setGeometry(1025, 270, 250, 80)
         self.button_house_3.clicked.connect(self.on_click_3)
+        self.buttons.append(self.button_house_3)
         # дом 4
         self.pixmap_4 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
         self.label_house_4 = QLabel(self)
         self.label_house_4.setPixmap(self.pixmap_4)
         self.label_house_4.setGeometry(300, 400, 200, 200)
-        self.button_house_4 = QPushButton('Купить дом четвертого уровня\nВ наличии {}'
+        self.button_house_4 = QPushButton('Купить дом четвертого уровня\nВ наличии: {}'
                                           .format(self.data['houses'][4]), self)
         self.button_house_4.setGeometry(275, 620, 250, 80)
         self.button_house_4.clicked.connect(self.on_click_4)
+        self.buttons.append(self.button_house_4)
         # дом 5
         self.pixmap_5 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
         self.label_house_5 = QLabel(self)
         self.label_house_5.setPixmap(self.pixmap_5)
         self.label_house_5.setGeometry(675, 400, 200, 200)
-        self.button_house_5 = QPushButton('Купить дом пятого уровня\nВ наличии {}'
+        self.button_house_5 = QPushButton('Купить дом пятого уровня\nВ наличии: {}'
                                           .format(self.data['houses'][5]), self)
         self.button_house_5.setGeometry(650, 620, 250, 80)
         self.button_house_5.clicked.connect(self.on_click_5)
+        self.buttons.append(self.button_house_5)
         # Кнопка статистики
 
         self.button_of_stat = QPushButton('Показать покупки', self)
         self.button_of_stat.setGeometry(50, 125, 170, 50)
         self.button_of_stat.clicked.connect(self.on_click_stat)
-
+        self.buttons.append(self.button_of_stat)
         # это тоже константа
         self.resize(1300, 800)
         self.show()
@@ -263,8 +270,8 @@ class Login(QDialog):
         self.signup_button_log = QPushButton('Sign Up', self)
         self.signup_button_log.setGeometry(330, 220, 75, 23)
         self.signup_button_log.setStyleSheet("QPushButton {background-color: rgb(255,255,255);"
-                                         " color: rgb(30,144,225); border-radius: 8px;}"
-                                         "QPushButton:pressed {background-color:rgb(220,220,220) ; }")
+                                             " color: rgb(30,144,225); border-radius: 8px;}"
+                                             "QPushButton:pressed {background-color:rgb(220,220,220) ; }")
         self.signup_button_log.clicked.connect(self.click_sign_up)
 
     def no_username(self):
