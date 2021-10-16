@@ -15,7 +15,7 @@ class ShopWindow(QMainWindow):
 
         self.buttons = []
         # дом 1
-        self.pixmap_1 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
+        self.pixmap_1 = QPixmap('/Users/apple/PycharmProjects/BestShop/data/дом_1_new.jpg')
         self.label_house_1 = QLabel(self)
         self.label_house_1.setPixmap(self.pixmap_1)
         self.label_house_1.setGeometry(300, 50, 200, 200)
@@ -25,7 +25,7 @@ class ShopWindow(QMainWindow):
         self.button_house_1.clicked.connect(self.on_click)
         self.buttons.append(self.button_house_1)
         # дом 2
-        self.pixmap_2 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
+        self.pixmap_2 = QPixmap('/Users/apple/PycharmProjects/BestShop/data/дом_2_new.jpg')
         self.label_house_2 = QLabel(self)
         self.label_house_2.setPixmap(self.pixmap_2)
         self.label_house_2.setGeometry(675, 50, 200, 200)
@@ -36,7 +36,7 @@ class ShopWindow(QMainWindow):
         self.button_house_2.clicked.connect(self.on_click_2)
         self.buttons.append(self.button_house_2)
         # дом 3
-        self.pixmap_3 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
+        self.pixmap_3 = QPixmap('/Users/apple/PycharmProjects/BestShop/data/дом_3_new.jpg')
         self.label_house_3 = QLabel(self)
         self.label_house_3.setPixmap(self.pixmap_3)
         self.label_house_3.setGeometry(1050, 50, 200, 200)
@@ -47,7 +47,7 @@ class ShopWindow(QMainWindow):
         self.button_house_3.clicked.connect(self.on_click_3)
         self.buttons.append(self.button_house_3)
         # дом 4
-        self.pixmap_4 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
+        self.pixmap_4 = QPixmap('/Users/apple/PycharmProjects/BestShop/data/дом_4_new.jpg')
         self.label_house_4 = QLabel(self)
         self.label_house_4.setPixmap(self.pixmap_4)
         self.label_house_4.setGeometry(300, 400, 200, 200)
@@ -57,7 +57,7 @@ class ShopWindow(QMainWindow):
         self.button_house_4.clicked.connect(self.on_click_4)
         self.buttons.append(self.button_house_4)
         # дом 5
-        self.pixmap_5 = QPixmap('/Users/apple/PycharmProjects/BestShop/lib/photo_2.jpeg')
+        self.pixmap_5 = QPixmap('/Users/apple/PycharmProjects/BestShop/data/дом_5_new.jpg')
         self.label_house_5 = QLabel(self)
         self.label_house_5.setPixmap(self.pixmap_5)
         self.label_house_5.setGeometry(675, 400, 200, 200)
