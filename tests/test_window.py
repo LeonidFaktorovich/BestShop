@@ -56,7 +56,7 @@ def test_window_Signup(qtbot):
 
 def test_window_ShopWindow(qtbot, data):
     window = ShopWindow('admin', 'leonid')
-    # Проверяемм количество кнопок
+    # Проверяем количество кнопок
     assert len(window.buttons) == 6
 
     # Проверяем текст кнопок
